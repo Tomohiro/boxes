@@ -15,7 +15,7 @@
       ],
       "boot_wait": "10s",
       "guest_os_type": "Ubuntu_64",
-      "headless": false,
+      "headless": true,
       "http_directory": "./",
       "iso_checksum": "af5f788aee1b32c4b2634734309cc9e9",
       "iso_checksum_type": "md5",
