@@ -1,0 +1,50 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<esc><wait>",
+        "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
+        "<enter><wait>"
+      ],
+      "boot_wait": "10s",
+      "guest_os_type": "RedHat",
+      "headless": true,
+      "http_directory": "./",
+      "iso_checksum": "4a5fa01c81cc300f4729136e28ebe600",
+      "iso_checksum_type": "md5",
+      "iso_url": "http://mozilla.ftp.iij.ad.jp/pub/linux/centos/6/isos/x86_64/CentOS-6.4-x86_64-minimal.iso",
+      "shutdown_command": "sudo shutdown -P now",
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "3000s",
+      "type": "virtualbox",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{ .Name }}",
+          "--pae",
+          "on"
+        ]
+      ],
+      "vm_name": "box"
+    }
+  ],
+  "post-processors": [
+    {
+      "output": "CentOS-6.4-x86_64.box",
+      "type": "vagrant"
+    }
+   ],
+  "provisioners": [
+    {
+      "execute_command": "sudo sh '{{ .Path }}'",
+      "scripts": [
+        "../postinstall/base.sh",
+        "../postinstall/puppet.sh",
+        "../postinstall/vagrant.sh",
+        "../postinstall/virtualbox.sh"
+      ],
+      "type": "shell"
+    }
+  ]
+}
