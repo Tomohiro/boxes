@@ -12,6 +12,7 @@ Name       | Version  | URL
 VirtualBox | 4.2.16   | https://www.virtualbox.org
 Packer     | 0.2.1    | http://www.packer.io
 Vagrant    | 1.2.7    | http://www.vagrantup.com
+Docker     | 0.5.1    | https://www.docker.io
 
 
 Packer
@@ -76,7 +77,7 @@ $ vagrant plugin install {plugin-name}
 #### Plugins
 
 Plugin                    | Description
-------------------------- | -----------------------------------------------------------
+------------------------- | ---------------------------------------------------
 [vagrant-list][]          | Show list of Vagrant boxes
 [vagrant-vbguest][]       | Keep your VirtualBox Guest Additions up to date
 [sahara][]                | Sahara allows vagrant to operate in sandbox mode
@@ -85,3 +86,37 @@ Plugin                    | Description
 [vagrant-list]:    https://github.com/joshmcarthur/vagrant-list
 [vagrant-vbguest]: https://github.com/dotless-de/vagrant-vbguest↩
 [sahara]: https://github.com/jedi4ever/sahara
+
+
+Docker
+--------------------------------------------------------------------------------
+
+Dockefiles in `boxes/docker/`.
+
+
+### Getting Started
+
+Create new container project:
+
+```sh
+$ mkdir example
+```
+
+Edit the Dockerfile:
+
+```sh
+$ vi Dockerfile
+```
+
+Build a container:
+
+```sh
+$ docker build .
+```
+
+Take a snapshot:
+
+```sh
+$ docker commit [ID] [Image name]
+# e.g. docker commit 48b33da9954b tomohiro/example
+```
