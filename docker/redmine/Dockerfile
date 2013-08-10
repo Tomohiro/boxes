@@ -10,7 +10,7 @@ ENV PATH /usr/local/rbenv/bin:/usr/local/rbenv/shims:/usr/local/sbin:/usr/local/
 # Install Ruby
 RUN rbenv install 1.9.3-p448
 RUN rbenv global 1.9.3-p448
-RUn rbenv rehash
+RUN rbenv rehash
 
 # Install Bundler
 RUN gem install --no-ri --no-rdoc bundler
