@@ -1,6 +1,6 @@
 # DOCKER-VERSION 0.5.1
 
-FROM       Tomohiro/rbenv
+FROM       tomohiro/rbenv
 MAINTAINER Tomohiro TAIRA "tomohiro.t@gmail.com"
 
 
