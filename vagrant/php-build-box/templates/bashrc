@@ -13,6 +13,7 @@ alias mv='mv -i'
 
 
 # Show the git current branch name to prompt
-source /usr/share/doc/git-1.7.1/contrib/completion/git-completion.bash
+source /usr/local/share/git-contrib/completion/git-completion.bash
+source /usr/local/share/git-contrib/completion/git-prompt.sh
 PS1='[\u@\H][\w]\[\033[33m\]$(__git_ps1 "(git)-[%s]")\[\033[00m\]
 \$ '

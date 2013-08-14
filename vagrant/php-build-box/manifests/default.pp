@@ -19,7 +19,6 @@ exec { 'yum-update':
 
 $build_packages = [
   'ntp',
-  'git',
   'rpmdevtools',
   'vim-enhanced',
   'postgresql-devel',
@@ -33,6 +32,8 @@ $build_packages = [
   'autoconf213',
   'libcurl-devel',
   'dbus-devel',
+  'perl-ExtUtils-CBuilder',
+  'perl-ExtUtils-MakeMaker'
 ]
 
 package { $build_packages:
@@ -44,6 +45,21 @@ service { 'ntpd':
   enable  => true,
   ensure  => running,
   require => Package[$build_packages]
+}
+
+file { '/tmp/install-git.sh':
+  ensure  => present,
+  content => template('install-git.sh'),
+  owner   => $user,
+  group   => $group,
+  mode    => '0777',
+  require => Package[$build_packages]
+}
+
+exec { 'install-git':
+  command => '/tmp/install-git.sh',
+  creates => '/usr/local/bin/git',
+  require => File['/tmp/install-git.sh']
 }
 
 
@@ -96,5 +112,5 @@ exec { 'clone-phpenv':
   user    => $user,
   command => "git clone https://github.com/phpenv/phpenv.git ${home}/.phpenv",
   creates => "${home}/.phpenv",
-  require => Package[$build_packages]
+  require => [Package[$build_packages], Exec['install-git']]
 }
