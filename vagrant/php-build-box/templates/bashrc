@@ -1,0 +1,18 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+
+# Show the git current branch name to prompt
+source /usr/share/doc/git-1.7.1/contrib/completion/git-completion.bash
+PS1='[\u@\H][\w]\[\033[33m\]$(__git_ps1 "(git)-[%s]")\[\033[00m\]
+\$ '

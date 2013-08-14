@@ -1,0 +1,16 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+#
+PATH=$HOME/bin:$HOME/.phpenv/bin:$PATH
+
+export PATH
+
+if [ -d $HOME/.phpenv ]; then
+  eval "$(phpenv init -)"
+fi
