@@ -1,0 +1,3 @@
+package { 'lxc':
+  ensure => latest
+}
