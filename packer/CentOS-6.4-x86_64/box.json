@@ -3,7 +3,7 @@
     {
       "boot_command": [
         "<esc><wait>",
-        "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
+        "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
         "<enter><wait>"
       ],
       "boot_wait": "10s",
