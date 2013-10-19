@@ -1,9 +1,11 @@
 #!/bin/sh
 # Install VirtualBox Guest Additions
 
-if [ -f /etc/redhat-release ]; then
+if [ -f /etc/system-release ]; then
   yum -y install dkms
-elif [ -f /etc/debian_version ]; then
+fi
+
+if [ -f /etc/debian_version ]; then
   apt-get -y install dkms
 fi
 
