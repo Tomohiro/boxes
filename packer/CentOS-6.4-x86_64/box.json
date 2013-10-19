@@ -9,7 +9,7 @@
       "boot_wait": "10s",
       "guest_os_type": "RedHat_64",
       "headless": true,
-      "http_directory": "./",
+      "http_directory": "../",
       "iso_checksum": "4a5fa01c81cc300f4729136e28ebe600",
       "iso_checksum_type": "md5",
       "iso_url": "http://mozilla.ftp.iij.ad.jp/pub/linux/centos/6/isos/x86_64/CentOS-6.4-x86_64-minimal.iso",
@@ -33,6 +33,7 @@
       "scripts": [
         "../postinstall/base.sh",
         "../postinstall/puppet.sh",
+        "../postinstall/chef.sh",
         "../postinstall/vagrant.sh",
         "../postinstall/virtualbox.sh"
       ],
