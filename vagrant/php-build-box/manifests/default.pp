@@ -11,7 +11,7 @@ Exec {
 
 
 exec { 'yum-update':
-  command => '/usr/bin/yum update -y',
+  command => 'yum update -y',
   timeout => 0
 }
 
@@ -79,8 +79,8 @@ $disable_services = [
 ]
 
 service { $disable_services:
-  enable => false,
-  ensure => stopped
+  ensure => stopped,
+  enable => false
 }
 
 
