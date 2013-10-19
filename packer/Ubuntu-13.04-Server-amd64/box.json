@@ -16,7 +16,7 @@
       "boot_wait": "10s",
       "guest_os_type": "Ubuntu_64",
       "headless": true,
-      "http_directory": "./",
+      "http_directory": "../",
       "iso_checksum": "7d335ca541fc4945b674459cde7bffb9",
       "iso_checksum_type": "md5",
       "iso_url": "http://releases.ubuntu.com/13.04/ubuntu-13.04-server-amd64.iso",
@@ -40,6 +40,7 @@
       "scripts": [
         "../postinstall/base.sh",
         "../postinstall/puppet.sh",
+        "../postinstall/chef.sh",
         "../postinstall/vagrant.sh",
         "../postinstall/virtualbox.sh"
       ],
