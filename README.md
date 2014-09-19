@@ -9,9 +9,9 @@ Requirements
 
 Name       | Version  | URL
 ---------- | -------- | -------------------------------------------------------
-VirtualBox | 4.2.18   | https://www.virtualbox.org
-Packer     | 0.3.9    | http://www.packer.io
-Vagrant    | 1.3.4    | http://www.vagrantup.com
+VirtualBox | 4.3.16   | https://www.virtualbox.org
+Packer     | 0.7.1    | http://www.packer.io
+Vagrant    | 1.6.5    | http://www.vagrantup.com
 Docker     | 0.5.1    | https://www.docker.io
 
 
