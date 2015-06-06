@@ -1,4 +1,12 @@
+# Ruby
 .bundle
 vendor
+
+# Vagrant
 .vagrant
-packer_cache
+
+# Direnv
+.envrc
+
+# Packer
+.packer_cache
