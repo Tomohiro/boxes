@@ -1,4 +1,12 @@
 {
+  "push": {
+    "name": "tomohiro/trusty64",
+    "vcs": true
+  },
+  "variables": {
+    "atlas_username": "{{env `USER`}}",
+    "atlas_name": "trusty64"
+  },
   "builders": [
     {
       "boot_command": [
@@ -36,25 +44,6 @@
       "vm_name": "box"
     }
   ],
-  "post-processors": [
-    [{
-      "type": "vagrant",
-      "keep_input_artifact": false
-    },
-    {
-      "type": "atlas",
-      "artifact": "tomohiro/trusty64",
-      "artifact_type": "vagrant.box",
-      "metadata": {
-        "provider": "virtualbox"
-      }
-    }]
-  ],
-  "push": {
-    "name": "tomohiro/trusty64",
-    "base_dir": "./",
-    "vcs": true
-  },
   "provisioners": [
     {
       "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'",
@@ -67,5 +56,19 @@
       ],
       "type": "shell"
     }
+  ],
+  "post-processors": [
+    [{
+      "type": "vagrant",
+      "keep_input_artifact": false
+    },
+    {
+      "type": "atlas",
+      "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "provider": "virtualbox"
+      }
+    }]
   ]
 }
