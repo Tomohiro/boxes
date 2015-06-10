@@ -4,7 +4,7 @@
     "vcs": true
   },
   "variables": {
-    "atlas_username": "{{env `USER`}}",
+    "atlas_username": "tomohiro",
     "atlas_name": "trusty64"
   },
   "builders": [
