@@ -49,8 +49,6 @@
       "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'",
       "scripts": [
         "./postinstall/base.sh",
-        "./postinstall/puppet.sh",
-        "./postinstall/chef.sh",
         "./postinstall/vagrant.sh",
         "./postinstall/virtualbox.sh"
       ],
