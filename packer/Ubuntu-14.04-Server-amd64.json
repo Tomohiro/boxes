@@ -24,7 +24,7 @@
       "boot_wait": "10s",
       "guest_os_type": "Ubuntu_64",
       "headless": true,
-      "http_directory": "./",
+      "http_directory": ".",
       "iso_checksum": "8acd2f56bfcba2f7ac74a7e4a5e565ce68c024c38525c0285573e41c86ae90c0",
       "iso_checksum_type": "sha256",
       "iso_url": "http://releases.ubuntu.com/releases/trusty/ubuntu-14.04.2-server-amd64.iso",
@@ -48,9 +48,9 @@
     {
       "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'",
       "scripts": [
-        "./postinstall/base.sh",
-        "./postinstall/vagrant.sh",
-        "./postinstall/virtualbox.sh"
+        "postinstall/base.sh",
+        "postinstall/vagrant.sh",
+        "postinstall/virtualbox.sh"
       ],
       "type": "shell"
     }
