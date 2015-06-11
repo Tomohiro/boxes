@@ -1,0 +1,71 @@
+{
+  "push": {
+    "name": "tomohiro/centos7",
+    "vcs": true
+  },
+  "variables": {
+    "atlas_username": "tomohiro",
+    "atlas_name": "centos7"
+  },
+  "builders": [
+    {
+      "boot_command": [
+        "<esc><wait>",
+        "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
+        "<enter><wait>"
+      ],
+      "boot_wait": "10s",
+      "guest_os_type": "RedHat_64",
+      "headless": false,
+      "http_directory": "./",
+      "iso_checksum": "7cf1ac8da13f54d6be41e3ccf228dc5bb35792f515642755ff4780d5714d4278",
+      "iso_checksum_type": "sha256",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso",
+      "shutdown_command": "sudo shutdown -P now",
+      "ssh_password": "vagrant",
+      "ssh_username": "vagrant",
+      "ssh_wait_timeout": "3000s",
+      "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{ .Name }}",
+          "--pae",
+          "on"
+        ]
+      ],
+      "vm_name": "box"
+    }
+  ],
+  "post-processors": [
+    {
+      "output": "CentOS-7.1-x86_64.box",
+      "type": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "execute_command": "sudo sh '{{ .Path }}'",
+      "scripts": [
+        "./postinstall/base.sh",
+        "./postinstall/vagrant.sh",
+        "./postinstall/virtualbox.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "post-processors": [
+    [{
+      "type": "vagrant",
+      "keep_input_artifact": false
+    },
+    {
+      "type": "atlas",
+      "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "provider": "virtualbox"
+      }
+    }]
+  ]
+}
