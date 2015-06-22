@@ -48,10 +48,6 @@
     }
   ],
   "post-processors": [
-    [{
-      "type": "vagrant",
-      "keep_input_artifact": false
-    },
     {
       "type": "atlas",
       "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
@@ -59,6 +55,6 @@
       "metadata": {
         "provider": "virtualbox"
       }
-    }]
+    }
   ]
 }
