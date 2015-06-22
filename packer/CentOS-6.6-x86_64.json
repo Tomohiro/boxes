@@ -26,18 +26,19 @@
       "ssh_username": "vagrant",
       "ssh_wait_timeout": "3000s",
       "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{ .Name }}",
+          "--pae",
+          "on"
+        ]
+      ],
       "vm_name": "box"
-    }
-  ],
-  "post-processors": [
-    {
-      "output": "CentOS-6.6-x86_64.box",
-      "type": "vagrant"
     }
   ],
   "provisioners": [
     {
-      "execute_command": "sudo sh '{{ .Path }}'",
       "scripts": [
         "postinstall/base.sh",
         "postinstall/vagrant.sh",

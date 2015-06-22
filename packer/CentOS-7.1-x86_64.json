@@ -37,12 +37,6 @@
       "vm_name": "box"
     }
   ],
-  "post-processors": [
-    {
-      "output": "CentOS-7.1-x86_64.box",
-      "type": "vagrant"
-    }
-  ],
   "provisioners": [
     {
       "execute_command": "sudo sh '{{ .Path }}'",
