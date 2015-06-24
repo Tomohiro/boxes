@@ -33,8 +33,7 @@
           "--pae",
           "on"
         ]
-      ],
-      "vm_name": "box"
+      ]
     }
   ],
   "provisioners": [

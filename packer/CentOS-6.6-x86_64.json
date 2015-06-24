@@ -33,12 +33,12 @@
           "--pae",
           "on"
         ]
-      ],
-      "vm_name": "box"
+      ]
     }
   ],
   "provisioners": [
     {
+      "execute_command": "sudo sh '{{ .Path }}'",
       "scripts": [
         "postinstall/base.sh",
         "postinstall/vagrant.sh",
