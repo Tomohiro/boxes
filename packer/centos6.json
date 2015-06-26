@@ -48,13 +48,19 @@
     }
   ],
   "post-processors": [
-    {
-      "type": "atlas",
-      "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
-      "artifact_type": "vagrant.box",
-      "metadata": {
-        "provider": "virtualbox"
+    [
+      {
+        "type": "vagrant",
+        "compression_level": 9
+      },
+      {
+        "type": "atlas",
+        "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
+        "artifact_type": "vagrant.box",
+        "metadata": {
+          "provider": "virtualbox"
+        }
       }
-    }
+    ]
   ]
 }
