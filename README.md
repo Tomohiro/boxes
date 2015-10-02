@@ -9,7 +9,7 @@ Requirements
 
 Name       | Version  | URL
 ---------- | -------- | -------------------------------------------------------
-VirtualBox | 4.3.16   | https://www.virtualbox.org
+VirtualBox | 5.0.0    | https://www.virtualbox.org
 Packer     | 0.7.1    | http://www.packer.io
 Vagrant    | 1.6.5    | http://www.vagrantup.com
 
