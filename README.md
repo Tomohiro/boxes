@@ -10,8 +10,8 @@ Requirements
 Name       | Version  | URL
 ---------- | -------- | -------------------------------------------------------
 VirtualBox | 5.0.0    | https://www.virtualbox.org
-Packer     | 0.7.1    | http://www.packer.io
-Vagrant    | 1.6.5    | http://www.vagrantup.com
+Packer     | 0.8.6    | http://www.packer.io
+Vagrant    | 1.7.4    | http://www.vagrantup.com
 
 
 Packer
